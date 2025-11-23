@@ -1,0 +1,45 @@
+.hero {
+    text-align: center;
+    height: 90vh;
+    align-content: start;
+    padding: 0.5rem;
+}
+
+.startVerse {
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-weight: 600;
+}
+
+.namaskarVerse {
+    font-weight: 600;
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    margin-top: 1em;
+}
+
+.startButton {
+    margin-top: 3em;
+    background-color: var(--background);
+    -webkit-tap-highlight-color: transparent;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--offset);
+    place-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: transform 200ms ease;
+    border: none;
+}
+
+.startButton:focus {
+    outline: none;
+}
+
+.startButton:hover {
+    transform: scale(1.05);
+}
+
+.startButton:active {
+    box-shadow: var(--insetOffset);
+}
