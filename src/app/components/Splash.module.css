@@ -1,0 +1,26 @@
+.splash {
+    height: 90vh;
+    width: 100vw;
+    align-content: center;
+    text-align: center;
+}
+
+.splashImage {
+    clip-path: circle(45%);
+    height: 40vh;
+    width: 80vw;
+    animation: spin 10s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+.splashTitle {
+    font-weight: bold;
+    font-size: clamp(1.8rem, 4vw, 2rem);
+    font-family: 'Times New Roman', Times, serif;
+}
