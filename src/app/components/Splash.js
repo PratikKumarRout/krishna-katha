@@ -6,8 +6,8 @@ export default function Splash() {
         <Image
         alt="Krishna Katha"
         src= "/splash.png"
-        height={350}
-        width={350}
+        height={300}
+        width={300}
         className= {styles.splashImage}
         />
         <h2 className={styles.splashTitle}>Krishna Katha</h2>

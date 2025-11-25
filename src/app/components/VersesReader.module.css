@@ -1,0 +1,168 @@
+.readerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.readerHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex-shrink: 0;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.backButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-4px);
+}
+
+.readerHeader h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+/* Snap-scroll container */
+.versesContainer {
+    flex: 1;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 126, 234, 0.4) rgba(102, 126, 234, 0.1);
+}
+
+/* Custom scrollbar for webkit browsers */
+.versesContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.versesContainer::-webkit-scrollbar-track {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+}
+
+.versesContainer::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.4);
+    border-radius: 10px;
+}
+
+.versesContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.6);
+}
+
+/* Each verse takes full viewport height */
+.verseCard {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.verseContent {
+    width: 100%;
+    max-width: 600px;
+    /* Neomorphic card styling */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow:
+        8px 8px 16px rgba(200, 210, 220, 0.5),
+        -8px -8px 16px rgba(255, 255, 255, 0.8),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+        inset -1px -1px 2px rgba(200, 210, 220, 0.2);
+    transition: all 0.3s ease;
+}
+
+.verseContent:hover {
+    box-shadow:
+        10px 10px 20px rgba(200, 210, 220, 0.6),
+        -10px -10px 20px rgba(255, 255, 255, 0.9),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+        inset -1px -1px 2px rgba(200, 210, 220, 0.3);
+}
+
+.verseNumber {
+    color: #667eea;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.sanskritSection {
+    margin-bottom: 2rem;
+}
+
+.sanskrit {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #2d3748;
+    font-style: italic;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.meaningSection {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.meaningSection h4,
+.odiaSection h4 {
+    color: #667eea;
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.meaning {
+    color: #4a5568;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.odiaSection {
+    margin-bottom: 1rem;
+}
+
+.odia {
+    color: #4a5568;
+    line-height: 1.8;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.25rem;
+    color: #e53e3e;
+}

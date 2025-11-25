@@ -7,8 +7,8 @@
 
 .splashImage {
     clip-path: circle(45%);
-    height: 40vh;
-    width: 80vw;
+    height: 30vh;
+    width: 60vw;
     animation: spin 10s linear;
 }
 

@@ -7,3 +7,9 @@
     font-family: serif;
     font-size: clamp(1rem, 5vw, 2.5rem);
 }
+
+.subtitle {
+    font-weight: 600;
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-top: 0.5rem;
+}
