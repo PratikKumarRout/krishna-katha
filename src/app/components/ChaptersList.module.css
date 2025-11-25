@@ -20,11 +20,11 @@
 }
 
 .chaptersListContainer {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0;
-    flex: 1;
+    height: calc(100vh - 15vh);
     overflow-y: auto;
     overflow-x: hidden;
 }

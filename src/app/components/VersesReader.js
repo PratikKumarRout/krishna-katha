@@ -1,6 +1,7 @@
 "use client"
 import styles from "./VersesReader.module.css";
 import { versesData } from "../data/versesData";
+import Header from "./Header";
 
 export default function VersesReader({ chapterId, onBack }) {
     const chapter = versesData[chapterId];
@@ -11,12 +12,6 @@ export default function VersesReader({ chapterId, onBack }) {
 
     return (
         <div className={styles.readerContainer}>
-            <div className={styles.readerHeader}>
-                <button className={styles.backButton} onClick={onBack}>
-                    ←
-                </button>
-                <h2>{chapter.chapterName}</h2>
-            </div>
 
             {/* Snap-scroll container for verses */}
             <div className={styles.versesContainer}>

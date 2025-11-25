@@ -4,6 +4,7 @@ import ChaptersList from "./ChaptersList";
 import Header from "./Header";
 import Hero from "./Hero";
 import VersesReader from "./VersesReader";
+import { chapters } from "../data/chaptersData";
 
 export default function HomeScreen() {
     const [started, setStarted] = useState(false);
@@ -19,8 +20,13 @@ export default function HomeScreen() {
         setSelectedChapterId(null);
     };
 
-    return <div style={styles.container}>
-        <Header subtitle={started ? "ଶ୍ରୀମଦ୍‌ଭଗବଦ୍‌ଗୀତା" : undefined} />
+    const selectedChapter = chapters.find(chapter => chapter.id === selectedChapterId);
+    const subtitle = selectedChapterId
+        ? (selectedChapter?.name ?? "")
+        : (started ? "ଶ୍ରୀମଦ୍‌ଭଗବଦ୍‌ଗୀତା" : undefined);
+
+    return <>
+        <Header subtitle={subtitle} />
         {selectedChapterId ? (
             <VersesReader chapterId={selectedChapterId} onBack={handleBackFromVerses} />
         ) : started ? (
@@ -28,9 +34,5 @@ export default function HomeScreen() {
         ) : (
             <Hero onStart={handleStart} />
         )}
-    </div>;
-}
-
-const styles = {
-    container: { display: "flex", flexDirection: "column", height: "100vh" }
+    </>;
 }

@@ -20,7 +20,7 @@
     margin-top: 3em;
     background-color: var(--background);
     -webkit-tap-highlight-color: transparent;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     border-radius: 1rem;
     box-shadow: var(--offset);
     place-content: center;
