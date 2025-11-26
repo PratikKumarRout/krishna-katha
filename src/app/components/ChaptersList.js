@@ -1,6 +1,6 @@
 "use client"
-import styles from "./ChaptersList.module.css";
 import { chapters } from "../data/chaptersData";
+import styles from "./styles/ChaptersList.module.css"
 
 export default function ChaptersList({ onChapterSelect }) {
     return (

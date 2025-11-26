@@ -1,20 +1,17 @@
 "use client"
 import styles from "./VersesReader.module.css";
 import { versesData } from "../data/versesData";
-import Header from "./Header";
 
 export default function VersesReader({ chapterId, onBack }) {
     const chapter = versesData[chapterId];
 
     if (!chapter) {
-        return <div className={styles.error}>Will be added soon...</div>;
+        return <div className={styles.error}>Chapter not found</div>;
     }
 
     return (
         <div className={styles.readerContainer}>
-
-            {/* Snap-scroll container for verses */}
-            <div className={styles.versesContainer}>
+            <div className={styles.versesSnapContainer}>
                 {chapter.verses.map((verse) => (
                     <div key={verse.id} className={styles.verseCard}>
                         <div className={styles.verseContent}>

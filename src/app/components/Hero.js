@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import styles from "./Hero.module.css";
+import styles from "./styles/Hero.module.css";
 
 export default function Hero({ onStart }) {
     return <section>

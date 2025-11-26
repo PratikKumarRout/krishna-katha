@@ -1,8 +1,8 @@
 .chapterButton {
     width: 100%;
     padding: 1.5rem 1.2rem;
-    margin-bottom: 1.5rem;
     border: none;
+    margin-bottom: 1.5rem;
     border-radius: 1rem;
     cursor: pointer;
     font-size: clamp(1.2rem, 4vw, 2rem);
@@ -17,13 +17,14 @@
 
 .chapterButton:active {
     box-shadow: var(--insetOffset);
+    transform: scale(.95);
 }
 
 .chaptersListContainer {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     display: flex;
+    gap: 2;
     flex-direction: column;
-    gap: 0;
     height: calc(100vh - 15vh);
     overflow-y: auto;
     overflow-x: hidden;
