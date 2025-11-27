@@ -2,9 +2,10 @@
 import { chapters } from "../data/chaptersData";
 import styles from "./styles/ChaptersList.module.css"
 
+
 export default function ChaptersList({ onChapterSelect }) {
     return (
-        <section className={styles.chaptersListContainer}>
+    <section className={styles.chaptersListContainer}>
             {chapters.map((chapter) => (
                 <button
                     key={chapter.id}
@@ -13,7 +14,6 @@ export default function ChaptersList({ onChapterSelect }) {
                     {chapter.name}
                 </button>
             ))}
-        </section>
+    </section>
     );
 }
-

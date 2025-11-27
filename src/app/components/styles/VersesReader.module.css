@@ -1,120 +1,19 @@
-.readerContainer {
+.verseContainer {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    height: calc(100vh - 15vh);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-/* Snap-scroll container */
-.versesContainer {
-    flex: 1;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(102, 126, 234, 0.4) rgba(102, 126, 234, 0.1);
-}
-
-/* Custom scrollbar for webkit browsers */
-.versesContainer::-webkit-scrollbar {
-    width: 8px;
-}
-
-.versesContainer::-webkit-scrollbar-track {
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 10px;
-}
-
-.versesContainer::-webkit-scrollbar-thumb {
-    background: rgba(102, 126, 234, 0.4);
-    border-radius: 10px;
-}
-
-.versesContainer::-webkit-scrollbar-thumb:hover {
-    background: rgba(102, 126, 234, 0.6);
-}
-
-/* Each verse takes full viewport height */
-.verseCard {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    display: flex;
-    min-height: calc(100vh - 15vh);
-    padding: 2rem;
-}
-
-.verseContent {
-    width: 100%;
-    max-width: 600px;
-    /* Neomorphic card styling */
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 20px;
-    padding: 2.5rem;
-}
-
-.verseNumber {
-    color: #667eea;
-    font-size: 0.9rem;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.sanskritSection {
-    margin-bottom: 2rem;
-}
-
-.sanskrit {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: #2d3748;
-    font-style: italic;
-    margin: 0.5rem 0 0 0;
+.verseCard{
+    border-style: solid;
     text-align: center;
-    font-weight: 500;
-}
-
-.meaningSection {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
-}
-
-.meaningSection h4,
-.odiaSection h4 {
-    color: #667eea;
-    font-size: 0.95rem;
-    margin: 0 0 0.75rem 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-
-.meaning {
-    color: #4a5568;
-    line-height: 1.7;
-    margin: 0;
-    font-size: 1rem;
-}
-
-.odiaSection {
-    margin-bottom: 1rem;
-}
-
-.odia {
-    color: #4a5568;
-    line-height: 1.8;
-    margin: 0;
-    font-size: 1.05rem;
-}
-
-.error {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    font-size: 1.25rem;
-    color: #e53e3e;
+    margin-bottom: 1rem;
+    min-height: 100%;
+    border-radius: 2rem;
 }

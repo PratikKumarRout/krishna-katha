@@ -1,6 +1,6 @@
 "use client"
-import styles from "./VersesReader.module.css";
 import { versesData } from "../data/versesData";
+import styles from "./styles/VersesReader.module.css";
 
 export default function VersesReader({ chapterId, onBack }) {
     const chapter = versesData[chapterId];
@@ -10,30 +10,25 @@ export default function VersesReader({ chapterId, onBack }) {
     }
 
     return (
-        <div className={styles.readerContainer}>
-            <div className={styles.versesSnapContainer}>
-                {chapter.verses.map((verse) => (
-                    <div key={verse.id} className={styles.verseCard}>
-                        <div className={styles.verseContent}>
-                            <h3 className={styles.verseNumber}>Verse {verse.id}</h3>
+        <section className={styles.verseContainer}>
 
-                            <div className={styles.sanskritSection}>
-                                <p className={styles.sanskrit}>{verse.sanskritText}</p>
-                            </div>
-
-                            <div className={styles.meaningSection}>
-                                <h4>Meaning</h4>
-                                <p className={styles.meaning}>{verse.meaning}</p>
-                            </div>
-
-                            <div className={styles.odiaSection}>
-                                <h4>ଓଡ଼ିଆ ଅନୁବାଦ</h4>
-                                <p className={styles.odia}>{verse.odia}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+            {chapter.verses.map((verse, index) => (
+                <div key={index} className={styles.verseCard}>
+                    <p>
+                        {verse.speaker}
+                    </p>
+                    <p className={styles.sanskrit}>
+                        {verse.sanskritText.split("\n").map((line, idx) => (
+                            <span key={idx}>
+                                {line}
+                                <br></br>
+                            </span>
+                        ))}</p>
+                    <p className={styles.odia}>
+                        {verse.odia}
+                    </p>
+                </div>
+            ))}
+        </section>
     );
 }

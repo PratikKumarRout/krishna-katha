@@ -27,7 +27,8 @@ export default function HomeScreen() {
 
     return <>
         <Header subtitle={subtitle} />
-        {selectedChapterId ? (
+        {
+        selectedChapterId ? (
             <VersesReader chapterId={selectedChapterId} onBack={handleBackFromVerses} />
         ) : started ? (
             <ChaptersList onChapterSelect={handleChapterSelect} />
