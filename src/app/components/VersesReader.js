@@ -14,9 +14,7 @@ export default function VersesReader({ chapterId, onBack }) {
 
             {chapter.verses.map((verse, index) => (
                 <div key={index} className={styles.verseCard}>
-                    <p className={styles.verseSpeaker}>
-                        {verse.speaker}
-                    </p>
+                    <p className={styles.verseSpeaker}> {verse.speaker} </p>
                     <p className={styles.verseSanskrit}>
                         {verse.sanskritText.split("\n").map((line, idx) => (
                             <span key={idx}>
@@ -24,9 +22,7 @@ export default function VersesReader({ chapterId, onBack }) {
                                 <br></br>
                             </span>
                         ))}</p>
-                    <p className={styles.verseOdia}>
-                       ଅର୍ଥ:- {verse.odia}
-                    </p>
+                    <p className={styles.verseOdia}> ଅର୍ଥ:- {verse.odia} </p>
                 </div>
             ))}
         </section>
