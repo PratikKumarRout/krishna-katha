@@ -14,18 +14,18 @@ export default function VersesReader({ chapterId, onBack }) {
 
             {chapter.verses.map((verse, index) => (
                 <div key={index} className={styles.verseCard}>
-                    <p>
+                    <p className={styles.verseSpeaker}>
                         {verse.speaker}
                     </p>
-                    <p className={styles.sanskrit}>
+                    <p className={styles.verseSanskrit}>
                         {verse.sanskritText.split("\n").map((line, idx) => (
                             <span key={idx}>
                                 {line}
                                 <br></br>
                             </span>
                         ))}</p>
-                    <p className={styles.odia}>
-                        {verse.odia}
+                    <p className={styles.verseOdia}>
+                       ଅର୍ଥ:- {verse.odia}
                     </p>
                 </div>
             ))}

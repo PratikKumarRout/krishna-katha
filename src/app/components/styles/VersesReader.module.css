@@ -5,15 +5,40 @@
     height: calc(100vh - 15vh);
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
-.verseCard{
+.verseCard {
     border-style: solid;
     text-align: center;
     display: flex;
+    border-color: blue;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1rem;
     min-height: 100%;
     border-radius: 2rem;
+    padding: 1rem;
+    scroll-snap-align: center;
+}
+
+.verseSpeaker {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.verseSanskrit {
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 5vh;
+    white-space: pre-wrap;
+}
+
+.verseOdia {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    white-space: wrap;
+    word-break: break-word;
 }
