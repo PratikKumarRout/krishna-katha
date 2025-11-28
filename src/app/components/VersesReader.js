@@ -1,28 +1,89 @@
-"use client"
-import { versesData } from "../data/versesData";
+// "use client"
+// import { versesData } from "../data/versesData";
+// import styles from "./styles/VersesReader.module.css";
+
+// export default function VersesReader({ chapterId, onBack }) {
+//     const chapter = versesData[chapterId];
+
+//     if (!chapter) {
+//         return <div className={styles.error}>Chapter not found</div>;
+//     }
+
+//     return (
+//         <section className={styles.verseContainer}>
+
+//             {chapter.verses.map((verse, index) => (
+//                 <div key={index} className={styles.verseCard}>
+//                     <p className={styles.verseSpeaker}> {verse.speaker} </p>
+//                     <p className={styles.verseSanskrit}>
+//                         {verse.sanskritText.split("\n").map((line, idx) => (
+//                             <span key={idx}>
+//                                 {line}
+//                                 <br></br>
+//                             </span>
+//                         ))}</p>
+//                     <p className={styles.verseOdia}> ଅର୍ଥ:- {verse.odia} </p>
+//                 </div>
+//             ))}
+//         </section>
+//     );
+// }
+
+"use client";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
 import styles from "./styles/VersesReader.module.css";
+import { database } from "../utils/firebaseconfig";
 
 export default function VersesReader({ chapterId, onBack }) {
-    const chapter = versesData[chapterId];
+    const [verses, setVerses] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    if (!chapter) {
-        return <div className={styles.error}>Chapter not found</div>;
+    useEffect(() => {
+        const fetchVerses = async () => {
+            try {
+                // Path: chapters/chapter_1/verses
+                const versesRef = collection(database, "chapters", `chapter_${chapterId}`, "verses");
+                const querySnapshot = await getDocs(versesRef);
+
+                const versesData = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+
+                setVerses(versesData);
+            } catch (error) {
+                console.error("Error fetching verses:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchVerses();
+    }, [chapterId]);
+
+    if (loading) {
+        return <div className={styles.loading}>Loading verses...</div>;
+    }
+
+    if (verses.length === 0) {
+        return <div className={styles.error}>verses will be added soon for this chapter</div>;
     }
 
     return (
         <section className={styles.verseContainer}>
-
-            {chapter.verses.map((verse, index) => (
+            {verses.map((verse, index) => (
                 <div key={index} className={styles.verseCard}>
-                    <p className={styles.verseSpeaker}> {verse.speaker} </p>
+                    <p className={styles.verseSpeaker}>{verse.speaker}</p>
                     <p className={styles.verseSanskrit}>
-                        {verse.sanskritText.split("\n").map((line, idx) => (
+                        {verse.verse.split("\n").map((line, idx) => (
                             <span key={idx}>
                                 {line}
-                                <br></br>
+                                <br />
                             </span>
-                        ))}</p>
-                    <p className={styles.verseOdia}> ଅର୍ଥ:- {verse.odia} </p>
+                        ))}
+                    </p>
+                    <p className={styles.verseOdia}>ଅର୍ଥ:- {verse.meaning}</p>
                 </div>
             ))}
         </section>
