@@ -15,9 +15,9 @@ export default function Hero({ onStart }) {
             </p>
             <p className={styles.namaskarVerse}>
                 ଓଁ ନାରାୟଣଂ ନମସ୍କୃତ୍ୟ ନରଂ ଚୈବ ନରୋତ୍ତମମ୍ |<br></br>
-                ଦେବୀ° ସରସ୍ଵତୀ° ବ୍ୟାସ° ତତୋ ଜୟମୁଦୀରୟେତ୍ ll<br></br>
+                ଦେବୀ° ସରସ୍ଵତୀ° ବ୍ୟାସ° ତତୋ ଜୟମୁଦୀରୟେତ୍ ||<br></br>
                 ମୁକଂ କରୋତି ବାଚାଳଂ  ପଙ୍ଗୁ°ଲଙ୍ଘୟତେ ଗିରିମ୍ |<br></br>
-                ଯତ୍କୃପା ତମହଂ ବନ୍ଦେ ପରମାନନ୍ଦମାଧବମ୍ ll
+                ଯତ୍କୃପା ତମହଂ ବନ୍ଦେ ପରମାନନ୍ଦମାଧବମ୍ ||
             </p>
 
             <button className={styles.startButton} onClick={onStart}>

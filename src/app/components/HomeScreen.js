@@ -23,7 +23,7 @@ export default function HomeScreen() {
     const selectedChapter = chapters.find(chapter => chapter.id === selectedChapterId);
     const subtitle = selectedChapterId
         ? (selectedChapter?.name ?? "")
-        : (started ? "ଶ୍ରୀମଦ୍‌ଭଗବଦ୍‌ଗୀତା" : undefined);
+        : (started ? "ଶ୍ରୀମଦ୍ଭଗବଦ୍‌ଗୀତା" : undefined);
 
     return <>
         <Header subtitle={subtitle} />
@@ -34,6 +34,6 @@ export default function HomeScreen() {
             <ChaptersList onChapterSelect={handleChapterSelect} />
         ) : (
             <Hero onStart={handleStart} />
-        )}
+        )} 
     </>;
 }
