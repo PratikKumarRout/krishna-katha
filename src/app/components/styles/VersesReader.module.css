@@ -11,16 +11,17 @@
 
 .verseCard {
     border-style: solid;
+    border-width: 4px;
     text-align: center;
+    border-color: blue;
     display: flex;
-    border-color: blueviolet;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1rem;
     min-height: 100%;
     border-radius: 2rem;
     padding: 1rem;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 .verseSpeaker {
@@ -35,6 +36,7 @@
     font-weight: 600;
     margin-bottom: 5vh;
     white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .verseOdia {
@@ -47,6 +49,7 @@
     font-weight: bold;
     text-align: center;
     font-size: clamp(1.2rem, 4vw, 2rem);
+    margin-top: 2rem;
 }
 
 .error {
