@@ -1,5 +1,5 @@
 .verseContainer {
-    padding: 1rem;
+    padding: 0.9rem 0.7rem;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 15vh);
