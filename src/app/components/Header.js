@@ -10,9 +10,8 @@ export default function Header({ subtitle, onBack }) {
                         <button
                             className={styles.backButton}
                             onClick={onBack}
-                            aria-label="Back"
-                        >
-                            ←
+                            aria-label="Back">
+                            ⬅️
                         </button>
                     )}
                     <p className={styles.subtitle}>{subtitle}</p>
