@@ -8,8 +8,29 @@
     font-size: clamp(1rem, 5vw, 2.5rem);
 }
 
+.subtitleRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
 .subtitle {
     font-weight: 600;
     font-size: clamp(1rem, 5vw, 2rem);
-    margin-top: 0.5rem;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: #667eea;
+    padding: 0.1rem 0.5rem;
+    border-radius: 6px;
+}
+
+.backButton:active {
+    transform: translateY(1px);
 }

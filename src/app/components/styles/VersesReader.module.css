@@ -32,15 +32,15 @@
 }
 
 .verseSanskrit {
-    font-size: clamp(1.2rem, 4.5vw, 2rem);
+    font-size: clamp(1.2rem, 4.8vw, 2.5rem);
     font-weight: 600;
-    margin-bottom: 5vh;
+    margin-bottom: 8vh;
     white-space: pre-wrap;
     word-break: break-word;
 }
 
 .verseOdia {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
     white-space: wrap;
     word-break: break-word;
 }

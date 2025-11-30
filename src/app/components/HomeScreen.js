@@ -26,14 +26,14 @@ export default function HomeScreen() {
         : (started ? "ଶ୍ରୀମଦ୍ଭଗବଦ୍‌ଗୀତା" : undefined);
 
     return <>
-        <Header subtitle={subtitle} />
+        <Header subtitle={subtitle} onBack={selectedChapterId ? handleBackFromVerses : undefined} />
         {
-        selectedChapterId ? (
-            <VersesReader chapterId={selectedChapterId} onBack={handleBackFromVerses} />
-        ) : started ? (
-            <ChaptersList onChapterSelect={handleChapterSelect} />
-        ) : (
-            <Hero onStart={handleStart} />
-        )} 
+            selectedChapterId ? (
+                <VersesReader chapterId={selectedChapterId} onBack={handleBackFromVerses} />
+            ) : started ? (
+                <ChaptersList onChapterSelect={handleChapterSelect} />
+            ) : (
+                <Hero onStart={handleStart} />
+            )}
     </>;
 }

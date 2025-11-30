@@ -4,7 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import styles from "./styles/VersesReader.module.css";
 import { database } from "../utils/firebaseconfig";
 
-export default function VersesReader({ chapterId, onBack }) {
+export default function VersesReader({ chapterId }) {
     const [verses, setVerses] = useState([]);
     const [loading, setLoading] = useState(true);
 
