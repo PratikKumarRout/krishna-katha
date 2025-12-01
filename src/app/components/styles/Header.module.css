@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 0.5rem;
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
 
 .subtitle {
@@ -27,7 +27,6 @@
     cursor: pointer;
     font-size: 1.2rem;
     color: blue;
-    border-radius: 6px;
 }
 
 .backButton:active {
