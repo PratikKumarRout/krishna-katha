@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { collection, getDocs, orderBy } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import styles from "./styles/VersesReader.module.css";
 import { database } from "../utils/firebaseconfig";
 
@@ -13,8 +13,8 @@ export default function VersesReader({ chapterId }) {
             try {
                 // Path: chapters/chapter_1/verses
                 const versesRef = collection(database, "chapters", `chapter_${chapterId}`, "verses");
-                // const queries = query(versesRef, orderBy("verse_number"));
-                const querySnapshot = await getDocs(versesRef);
+                const queries = query(versesRef, orderBy("verse_number"));
+                const querySnapshot = await getDocs(queries);
 
                 const versesData = querySnapshot.docs.map(doc => ({
                     id: doc.id,
