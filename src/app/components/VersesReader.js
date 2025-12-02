@@ -13,8 +13,8 @@ export default function VersesReader({ chapterId }) {
             try {
                 // Path: chapters/chapter_1/verses
                 const versesRef = collection(database, "chapters", `chapter_${chapterId}`, "verses");
-                const queries = query(versesRef, orderBy("verse_number"));
-                const querySnapshot = await getDocs(queries);
+                // const queries = query(versesRef, orderBy("verse_number"));
+                const querySnapshot = await getDocs(versesRef);
 
                 const versesData = querySnapshot.docs.map(doc => ({
                     id: doc.id,
