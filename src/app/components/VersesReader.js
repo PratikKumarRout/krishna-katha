@@ -33,11 +33,11 @@ export default function VersesReader({ chapterId }) {
     }, [chapterId]);
 
     if (loading) {
-        return <div className={styles.loading}>Loading verses...</div>;
+        return <div className={styles.loading}>Loading Verses...</div>;
     }
 
     if (verses.length === 0) {
-        return <div className={styles.error}>verses will be added soon for this chapter</div>;
+        return <div className={styles.error}>Verses for this chapter will be added soon.</div>;
     }
 
     return (
