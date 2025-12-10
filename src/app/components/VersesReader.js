@@ -53,7 +53,7 @@ export default function VersesReader({ chapterId }) {
                             </span>
                         ))}
                     </p>
-                    <p className={styles.verseOdia}>ଭାବାର୍ଥ: {verse.meaning}</p>
+                    <p className={styles.verseOdia}>{verse.meaning}</p>
                 </div>
             ))}
         </section>
